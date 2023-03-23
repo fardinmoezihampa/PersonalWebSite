@@ -1,0 +1,20 @@
+__pycache__/
+.idea/
+
+# DateBase
+db.sqlite3
+
+# Static files
+files/
+static/
+staticfiles/
+
+# Virtual env
+venv/
+blogpy/__pycache__/
+
+# Migrations
+blog/migrations/
+
+
+
