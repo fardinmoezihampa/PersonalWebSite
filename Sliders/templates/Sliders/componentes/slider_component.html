@@ -1,0 +1,24 @@
+<div class="single-slide">
+    <img src="{{ slider.image.url }}" alt="{{ slider.title }}">
+    <div class="slide-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="slide-article">
+                        <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                            {{ slider.title }}</h1>
+                        <p class="wow fadeInUp" data-wow-duration="0.5s"
+                           data-wow-delay="0.75s">{{ slider.descriptions|truncatechars:40 }}</p>
+                        <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"
+                           href="{{ slider.url }}">مشاهده بیشتر</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="slider-img wow fadeInUp">
+                        <img src="{{ slider.fade_up_image.url }}" alt="business man">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
