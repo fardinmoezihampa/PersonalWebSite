@@ -1,12 +1,16 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from .validators import min_value_validator, max_value_validator
 
 
 class Skill(models.Model):
     skill = models.CharField(max_length=50, verbose_name='عنوان مهارت')
+    # percent = models.IntegerField(verbose_name='درصد تسلط در مهارت',
+    #                               validators=[MinValueValidator(0, 'مقدار ورودی کمتر از حد مجاز است'),
+    #                                           MaxValueValidator(100, 'مقدار ورودی بیشتر از حد مجاز است')])
+
     percent = models.IntegerField(verbose_name='درصد تسلط در مهارت',
-                                  validators=(MinValueValidator(0, 'مقدار ورودی کمتر از حد مجاز است'),
-                                              MaxValueValidator(100, 'مقدار ورودی بیشتر از حد مجاز است')))
+                                  validators=[min_value_validator, max_value_validator])
 
     class Meta:
         ordering = ['-percent']

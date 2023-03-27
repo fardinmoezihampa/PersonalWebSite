@@ -6,7 +6,7 @@ from Resume.models import Skill, Biography
 
 def home_page(request):
     sliders = Slider.objects.filter(is_show=True)
-    skills = Skill.objects.all()
+    skills = Skill.objects.all()[:3]
     bio = Biography.objects.filter(is_active=True).first()
     context = {
         'sliders': sliders,
