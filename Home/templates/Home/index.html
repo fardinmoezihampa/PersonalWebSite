@@ -63,7 +63,7 @@
                                                          src="{{ bio.avatar.url }}"
                                                          alt="img">
                                                     <p>
-                                                        {{ bio.description|truncatechars:250 }}
+                                                        {{ bio.description|safe }}
                                                     </p>
                                                 </div>
                                             </div>

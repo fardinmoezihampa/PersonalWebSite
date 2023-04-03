@@ -1,8 +1,8 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from .validators import min_value_validator, max_value_validator
-
-
+# from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 class Skill(models.Model):
     skill = models.CharField(max_length=50, verbose_name='عنوان مهارت')
     # percent = models.IntegerField(verbose_name='درصد تسلط در مهارت',
@@ -24,7 +24,9 @@ class Skill(models.Model):
 class Biography(models.Model):
     title = models.CharField(max_length=100, verbose_name='نام مهارت')
     avatar = models.ImageField(upload_to='images/resume/bio/', verbose_name='تصویر آواتار')
-    description = models.TextField(verbose_name='متن بیوگرافی')
+    # description = models.TextField(verbose_name='متن بیوگرافی')
+    # description = RichTextField(verbose_name='متن بیوگرافی')
+    description = RichTextUploadingField(verbose_name='متن بیوگرافی')
     is_active = models.BooleanField(verbose_name='فعال باشد؟', default=False)
 
     class Meta:
